@@ -1,0 +1,25 @@
+services:
+  # === FRONTEND ===
+  - type: static
+    name: shopspot-showcase
+    rootDir: shopspot-showcase
+    buildCommand: npm ci && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://shopspot-backend.onrender.com  # change to your backend Render URL
+
+  # === BACKEND ===
+  - type: web
+    name: shopspot-backend
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn backend.wsgi:application
+    env: python
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
