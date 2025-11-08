@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0anb5%=!-s%f2&^zds3_4&$to6r)#cf#^f^f3v)$xqd3p03hdr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://fullstack-dealshop12234.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
