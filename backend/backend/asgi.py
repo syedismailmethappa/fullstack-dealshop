@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/asgi/
 import os
 
 from django.core.asgi import get_asgi_application
-settings_module='backe.deployment' if 'RENDER_EXTERNAL_HOSTNAME' in os.environ else 'backe.settings'
+settings_module='backe.deployement' if 'RENDER_EXTERNAL_HOSTNAME' in os.environ else 'backe.settings'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_asgi_application()
