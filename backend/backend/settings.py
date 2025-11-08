@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['fullstack-dealshop12234.onrender.com', 'localhost', '127.0.0.1
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "https://fullstack-dealshop12234.onrender.com",
+    "https://fullstack-dealshop2.onrender.com",
     "http://localhost:5173",
     "http://127.0.0.1:5173"
 ]
