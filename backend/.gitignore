@@ -43,26 +43,3 @@ profile_default/
 ipython_config.py
 # pyenv
 .python-version
-# pipenv
-pipenv-*.txt
-# pytest
-.cache
-.pytest_cache/
-# mypy
-.mypy_cache/
-.dmypy.json
-# Pyre type checker
-.pyre/
-# pytype static type analyzer
-.pytype/
-# Cython debug symbols
-cython_debug/
-# VS Code
-.vscode/
-# Rider
-
-.idea/
-*.sln
-*.csproj
-*.user  
-*.suo
