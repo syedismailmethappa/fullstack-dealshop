@@ -58,11 +58,13 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    # Security middleware should come first
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    # WhiteNoise should be placed right after SecurityMiddleware for static file serving
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # CORS middleware should be before CommonMiddleware
     'corsheaders.middleware.CorsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -91,6 +93,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
 import dj_database_url
 
 DATABASES = {
