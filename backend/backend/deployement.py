@@ -4,8 +4,8 @@ from .settings import *
 from .settings import BASE_DIR
 
 
-ALLOWED_HOSTS = [os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(",")]
-CSRF_TRUSTED_ORIGINS = ['https://' + host for host in os.environ.get("RENDER_EXTERNAL_HOSTNAME", "").split(",")]
+ALLOWED_HOSTS = [os.environ.get("DJANGO_ALLOWED_HOSTNAME")]
+CSRF_TRUSTED_ORIGINS = ['https://' + host for host in os.environ.get("RENDER_EXTERNAL_HOSTNAME")]
 
 DEBUG = False
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", SECRET_KEY)
