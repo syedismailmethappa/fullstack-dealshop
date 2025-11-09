@@ -1,7 +1,7 @@
 from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db import models
+from django.db import models, StreamingHttpResponse
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -45,3 +45,11 @@ class ProductViewSet(viewsets.ModelViewSet):
             serializer = self.get_serializer(products, many=True)
             return Response(serializer.data)
         return Response([])
+   
+
+    def my_view(request):
+        def stream_generator():
+            def stream_generator():
+                yield "something"
+                return StreamingHttpResponse(stream_generator(), content_type="text/plain")
+
