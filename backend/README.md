@@ -47,7 +47,14 @@ This is the Django REST API backend for the ShopSpot Showcase application.
    DJANGO_SECRET_KEY=your-secret-key
    DJANGO_ALLOWED_HOSTNAME=your-app-name.onrender.com
    RENDER_EXTERNAL_HOSTNAME=your-app-name.onrender.com
+   DJANGO_SUPERUSER_PASSWORD=your-superuser-password
    ```
+   
+   **Note:** The `DJANGO_SUPERUSER_PASSWORD` environment variable is used to automatically create a superuser during deployment with:
+   - Username: `syed`
+   - Email: `syedmethappa0987@gmail.com`
+   
+   If this variable is not set, the superuser creation will be skipped (you can create it manually later).
 
 2. **Build Command:**
    ```bash
