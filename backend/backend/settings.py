@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-0anb5%=!-s%f2&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['fullstack-dealshop2.onrender.com',"127.0.0.1","localhost"]
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [

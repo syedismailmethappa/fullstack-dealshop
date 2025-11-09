@@ -67,10 +67,10 @@ shopfiy/
 3. **Create environment file (optional):**
    Create a `.env` file in the `shopspot-showcase` directory:
    ```env
-   VITE_API_BASE_URL="https://fullstack-dealshop00.onrender.com/api/products/"
+   VITE_API_BASE_URL=https://fullstack-dealshop00.onrender.com/
    ```
 
-   If you don't create this file, it will default to `"https://fullstack-dealshop00.onrender.com/api/products/"`
+   If you don't create this file, it will default to `https://fullstack-dealshop00.onrender.com/`
 
 4. **Start the development server:**
    ```bash
