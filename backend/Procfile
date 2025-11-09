@@ -1,0 +1,1 @@
+web: gunicorn backend.asgi:application -c gunicorn.conf.py
