@@ -8,8 +8,6 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/asgi/
 """
 
 import os
-import signal
-import sys
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
@@ -17,11 +15,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 # Get the ASGI application
 application = get_asgi_application()
 
-def handle_signal(signum, frame):
-    """Handle shutdown signals gracefully"""
-    print(f'Received signal {signum}. Performing graceful shutdown...')
-    sys.exit(0)
-
-# Register signal handlers
-signal.signal(signal.SIGTERM, handle_signal)
-signal.signal(signal.SIGINT, handle_signal)
+# Note: Gunicorn / Uvicorn workers handle signals. Avoid custom signal
+# handlers here so we don't interfere with the server's graceful shutdown.

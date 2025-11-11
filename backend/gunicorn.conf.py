@@ -23,8 +23,14 @@ max_requests_jitter = 50
 preload_app = False
 reload = False  # Don't reload in production
 
-# Server socket
-bind = '0.0.0.0:$PORT'  # Render will replace $PORT
+import os
+
+# Server socket - read port from environment safely
+PORT = os.environ.get('PORT', '8000')
+bind = f'0.0.0.0:{PORT}'
+
+# Allow configuring concurrency from environment (Render sets WEB_CONCURRENCY)
+workers = int(os.environ.get('WEB_CONCURRENCY', str(workers)))
 
 def on_starting(server):
     """Log when server starts"""
